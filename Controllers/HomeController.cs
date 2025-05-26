@@ -30,6 +30,42 @@ namespace MVCSiteTemplate.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult App(FizzBuzz model)
+        {
+            List<string> fbItems = [];
+            bool isFizz;
+            bool isBuzz;
+
+            for (int i = 1; i <= 100; i++)
+            {
+                isFizz = (i % model.FizzValue == 0);
+                isBuzz = (i % model.BuzzValue == 0);
+
+                if (isFizz && isBuzz)
+                {
+                    fbItems.Add("FizzBuzz");
+                }
+                else if (isFizz)
+                {
+                    fbItems.Add("Fizz");
+                }
+                else if (isBuzz)
+                {
+                    fbItems.Add("Buzz");
+                }
+                else
+                {
+                    fbItems.Add(i.ToString());
+                }
+            }
+
+            model.Result = fbItems;
+
+            return View(model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
