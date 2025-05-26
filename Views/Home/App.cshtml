@@ -1,3 +1,52 @@
 ﻿@{
     ViewData["Title"] = "App Page";
 }
+
+<div class="container col-xxl-8 px-4 my-5 mt-2">
+    <div class="row gy-2 h-100 row-cols-md-2 row-cols-1">
+        <div class="col border-2 border-end">
+            <h3 class="fw-bold lh-1 mb-3">
+                FizzBuzz in MVC
+            </h3>
+            <h4 class="lead">
+                When it counts, you FizzBuzz. A C# MVC coding exercise using
+                loops. Write a program that prints the numbers from 1 to 100 and
+                for multiples of '3', display <strong>"Fizz"</strong> instead of
+                the number and for the multiples of '5', display <strong>"Buzz"</strong>.
+                If a multiple of both, display <strong>"FizzBuzz"</strong>
+            </h4>
+            <h2 class="mt-5 border-bottom border-2">
+                Instructions
+            </h2>
+            <p>
+                Enter a fizz and a buzz value. Press the button and the results will appear.
+            </p>
+        </div>
+        <div class="col">
+            <div>
+                <h5>
+                    Enter numbers:
+                </h5>
+                <form asp-controller="Home" asp-action="App" method="post">
+                    <div class="form-group">
+                        <label>Fizz Value</label>
+                        <input type="number" class="form-control" placeholder="Enter a fizz value" />
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Buzz Value</label>
+                        <input type="number" class="form-control" placeholder="Enter a buzz value" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </form>
+                <h2 class="mt-5 border-bottom border-2">
+                    Results:
+                </h2>
+                <div class="table-responsive">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
