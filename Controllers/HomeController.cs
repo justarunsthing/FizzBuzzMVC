@@ -18,9 +18,16 @@ namespace MVCSiteTemplate.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult App()
         {
-            return View();
+            FizzBuzz model = new()
+            {
+                FizzValue = 3,
+                BuzzValue = 5
+            };
+
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

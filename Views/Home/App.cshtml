@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MVCSiteTemplate.Models.FizzBuzz
+@{
     ViewData["Title"] = "App Page";
 }
 
@@ -29,12 +30,12 @@
                 </h5>
                 <form asp-controller="Home" asp-action="App" method="post">
                     <div class="form-group">
-                        <label>Fizz Value</label>
-                        <input type="number" class="form-control" placeholder="Enter a fizz value" />
+                        <label asp-for="FizzValue">Fizz Value</label>
+                        <input type="number" asp-for=FizzValue value="@Model.FizzValue" class="form-control" placeholder="Enter a fizz value" />
                     </div>
                     <div class="form-group mb-2">
-                        <label>Buzz Value</label>
-                        <input type="number" class="form-control" placeholder="Enter a buzz value" />
+                        <label asp-for="BuzzValue">Buzz Value</label>
+                        <input type="number" asp-for="BuzzValue" value="@Model.BuzzValue" class="form-control" placeholder="Enter a buzz value" />
                     </div>
                     <button type="submit" class="btn btn-primary">
                         Submit
