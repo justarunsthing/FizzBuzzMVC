@@ -1,24 +1,26 @@
 :root {
     --primary-color: #1D5888;
-    --secondary-color: #FF993B;
+    --secondary-color: #906387;
     --dark-color: #292929;
-    --white-color: #E7E7E7;
+    --white-color: #DFF3E4;
+}
+
+.theme-color {
+    background-color: #24A38E;
+}
+
+.action {
+    background-color: var(--secondary-color);
+}
+
+.action:hover {
+    background-color: #54C1A9;
+    border: 2px solid #1D7C6B;
+    box-shadow: 0 0 10px rgba(36, 163, 142, 0.35);
 }
 
 .devicons {
     font-size: 4rem;
-}
-
-body {
-    color: var(--dark-color);
-}
-
-nav {
-    background-color: var(--dark-color);
-}
-
-footer {
-    background-color: var(--dark-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
