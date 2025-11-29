@@ -48,43 +48,18 @@
                     Results
                 </h2>
 
-                @if (Model.Result.Count > 0)
+                @if (Model.Result != null && Model.Result.Count > 0)
                 {
                     <div class="table-responsive">
                         <table class="table table-striped table-hover">
-                            @for (int i = 0; i < Model.Result.Count(); i += 10)
+                            @* Loop over results in chunks of 10 *@
+                            @for (int i = 0; i < Model.Result.Count; i += 10)
                             {
                                 <tr>
-                                    <td class="@(Model.Classes[i])">
-                                        @Model.Result[i]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 1])">
-                                        @Model.Result[i + 1]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 2])">
-                                        @Model.Result[i + 2]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 3])">
-                                        @Model.Result[i + 3]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 4])">
-                                        @Model.Result[i + 4]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 5])">
-                                        @Model.Result[i + 5]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 6])">
-                                        @Model.Result[i + 6]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 7])">
-                                        @Model.Result[i + 7]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 8])">
-                                        @Model.Result[i + 8]
-                                    </td>
-                                    <td class="@(Model.Classes[i + 9])">
-                                        @Model.Result[i + 9]
-                                    </td>
+                                    @for (int j = i; j < i + 10 && j < Model.Result.Count; j++)
+                                    {
+                                        <td class="@(Model.Classes[j])">@Model.Result[j]</td>
+                                    }
                                 </tr>
                             }
                         </table>

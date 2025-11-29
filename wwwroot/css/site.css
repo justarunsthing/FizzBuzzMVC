@@ -85,16 +85,19 @@ html {
   text-align: start;
 }
 
-.fizz {
+.table td.fizz {
     color: #24A38E;
+    font-weight: bold;
 }
 
-.buzz {
+.table td.buzz {
     color: var(--secondary-color);
+    font-weight: bold;
 }
 
-.fizzbuzz {
+.table td.fizzbuzz {
     color: red;
+    font-weight: bold;
 }
 
 body {
