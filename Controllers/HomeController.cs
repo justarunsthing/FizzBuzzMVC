@@ -35,6 +35,7 @@ namespace MVCSiteTemplate.Controllers
         public IActionResult App(FizzBuzz model)
         {
             List<string> fbItems = [];
+            List<string> classes = [];
             bool isFizz;
             bool isBuzz;
 
@@ -46,22 +47,27 @@ namespace MVCSiteTemplate.Controllers
                 if (isFizz && isBuzz)
                 {
                     fbItems.Add("FizzBuzz");
+                    classes.Add("fizzbuzz");
                 }
                 else if (isFizz)
                 {
                     fbItems.Add("Fizz");
+                    classes.Add("fizz");
                 }
                 else if (isBuzz)
                 {
                     fbItems.Add("Buzz");
+                    classes.Add("buzz");
                 }
                 else
                 {
                     fbItems.Add(i.ToString());
+                    classes.Add("");
                 }
             }
 
             model.Result = fbItems;
+            model.Classes = classes;
 
             return View(model);
         }
