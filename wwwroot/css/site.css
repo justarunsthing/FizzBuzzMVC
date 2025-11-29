@@ -5,6 +5,10 @@
     --white-color: #E7E7E7;
 }
 
+.devicons {
+    font-size: 4rem;
+}
+
 body {
     color: var(--dark-color);
 }
