@@ -32,10 +32,10 @@
                     <form asp-controller="Home" asp-action="App" method="post">
                         <div class="col-12 form-group">
                             <label asp-for="FizzValue">Fizz Value</label>
-                            <input type="number" asp-for=FizzValue value="@Model.FizzValue" class="form-control" placeholder="Enter a fizz value" />
+                            <input type="number" asp-for=FizzValue value="@Model.FizzValue" min="1" max="100" class="form-control" placeholder="Enter a fizz value" />
 
                             <label asp-for="BuzzValue">Buzz Value</label>
-                            <input type="number" asp-for="BuzzValue" value="@Model.BuzzValue" class="form-control" placeholder="Enter a buzz value" />
+                            <input type="number" asp-for="BuzzValue" value="@Model.BuzzValue" min="1" max="100" class="form-control" placeholder="Enter a buzz value" />
                         </div>
                         <div class="d-flex justify-content-end mt-3">
                             <button type="submit" class="btn btn-lg text-light action">
